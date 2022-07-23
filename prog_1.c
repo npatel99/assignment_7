@@ -6,16 +6,15 @@
 int main()
 {
     int f0 = 0, f1 = 1, f2, n, i;
-    printf("Enter the n element: ");
+    printf("Enter the nth term: ");
     scanf("%d", &n);
-    printf("Fibonnaci series: %d %d ", f0, f1);
     for(i=2; i<n ; i++)
     {
         f2 = f0+f1;
-        printf("%d ", f2);
         f0 = f1;
         f1 = f2;
     }
+    printf("%dth term in series is: %d ", n, f2);
     printf("\n");
     return 0;
 }
