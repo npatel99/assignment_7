@@ -1,20 +1,21 @@
 #include<stdio.h>
 /*Write a program to find the Nth term of the Fibonnaci series.
-*Fibonnaci series - 0 1 1 2 3 5 8 13 21 34 55 89 ........
-*Fn = Fn-1 + Fn-2; F0 = 0, F1 = 1
+*Fibonnaci series - 1 1 2 3 5 8 13 21 34 55 89 ........
+*Fn = Fn-1 + Fn-2; next = curr + prev;
 */
 int main()
 {
-    int f0 = 0, f1 = 1, f2, n, i;
-    printf("Enter the nth term: ");
+    int prev = 0, curr = 1, next, n, i;
+    printf("Enter the nth term : ");
     scanf("%d", &n);
-    for(i=2; i<n ; i++)
+    
+    for(i=1; i<n ; i++)
     {
-        f2 = f0+f1;
-        f0 = f1;
-        f1 = f2;
+        next = prev + curr;
+        prev = curr;
+        curr = next;
     }
-    printf("%dth term in series is: %d ", n, f2);
+    printf("%dth term of Fabonacci series is: %d", n, next);
     printf("\n");
     return 0;
 }
